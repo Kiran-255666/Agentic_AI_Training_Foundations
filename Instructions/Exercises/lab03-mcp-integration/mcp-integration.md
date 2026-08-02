@@ -68,7 +68,7 @@ For this exercise, you'll use starter code that will help you connect to your Fo
 2. The Repository will get download in Downloads folder, right click the file and select Extract all to unzip the zip file.
 3. In VS Code, click on File menu, then select open Folder.
 4. Select the folder that you have unzipped in the previous step.
-5. Once the repository opens, select **File > Open Folder** and navigate to `mslearn-ai-agents/Labfiles/03-mcp-integration`, then choose **Select Folder**.
+5. Once the repository opens, select **File > Open Folder** and navigate to `Agentic_AI_Training_Foundations/Labfiles/03-mcp-integration`, then choose **Select Folder**.
 6. In the Explorer pane, expand the **Python** folder to view the code files for this exercise.
 7. Right-click on the **requirements.txt** file and select **Open in Integrated Terminal**.
 8. In the terminal, enter the following command to install the required Python packages in a virtual environment:
@@ -305,7 +305,7 @@ In addition to connecting to remote MCP servers, you can also create your own cu
 
 1. Save the file (*CTRL+S*).
 
-## Implement an MCP client to connect to the custom MCP server
+## Implement an MCP client to connect to the custom MCP server (We have already updated the mentioned files with the code mentioned in the instruction, but we would highly suggest going through it before executing it)
 
 An MCP client is the component that connects to the MCP server to discover and call tools. You can think of it as the bridge between the agent and the server-hosted functions, enabling dynamic tool use in response to user prompts.
 
@@ -350,7 +350,7 @@ An MCP client is the component that connects to the MCP server to discover and c
 
     Now your client session is ready for use with your Azure AI Agent.
 
-## Connect the MCP tools to your agent
+## Connect the MCP tools to your agent (We have already updated the mentioned files with the code mentioned in the instruction, but we would highly suggest going through it before executing it)
 
 In this task, you'll connect the MCP server tools to your agent so that it can call them in response to user prompts.
 
@@ -506,22 +506,4 @@ In this task, you'll connect the MCP server tools to your agent so that it can c
 
     You can also use `deactivate` to exit the Python virtual environment in the terminal.
 
-## Clean up
 
-When you've finished exploring the Foundry Toolkit for VS Code extension, you should clean up the resources to avoid incurring unnecessary Azure costs.
-
-### Delete your model
-
-1. In VS Code, refresh the **Azure Resources** view.
-
-1. Expand the **Models** subsection.
-
-1. Right-click on your deployed model and select **Delete**.
-
-### Delete the resource group
-
-1. Open the [Azure portal](https://portal.azure.com).
-
-1. Navigate to the resource group containing your Microsoft Foundry resources.
-
-1. Select **Delete resource group** and confirm the deletion.
