@@ -46,7 +46,7 @@ As a developer, you may spend some time working in the Foundry portal; but youâ€
 5. verify that a default project is already active, the project name will appear under **My Resources**. You can create a new project by right-clicking on the active project and selecting **Switch Default Project in Azure Resources**.
 
 
-## Deploy a model
+## Verify the deployed model
 
 At the core of any generative AI project, thereâ€™s at least one generative AI model. In this task, you'll deploy a model from the Model Catalog to use with your agent (we have already deployed a model - gpt-5.4-mini).
 
