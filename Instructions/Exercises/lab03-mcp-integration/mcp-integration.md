@@ -23,11 +23,11 @@ Before starting this exercise, ensure you have:
 - [Visual Studio Code](https://code.visualstudio.com/) installed on your local machine
 - An active [Azure subscription](https://azure.microsoft.com/free/)
 - [Python 3.13](https://www.python.org/downloads/) or later installed
-- [Git](https://git-scm.com/downloads) installed on your local machine
+
 
 > \* Python 3.13 is available, but some dependencies are not yet compiled for that release. The lab has been successfully tested with Python 3.12.
 
-## Create a Foundry project with the Foundry Toolkit for VS Code extension
+## Create a Foundry project with the Foundry Toolkit for VS Code extension 
 
 As a developer, you may spend some time working in the Foundry portal; but you’re also likely to spend a lot of time in Visual Studio Code. The Foundry Toolkit for VS Code extension provides a convenient way to work with Foundry project resources without leaving the development environment.
 
@@ -43,65 +43,35 @@ As a developer, you may spend some time working in the Foundry portal; but you�
 
     You should be prompted to sign in to your Azure account if you haven't already.
 
-5. Select **Create Project** under **Microsoft Foundry Resources**.
+5. verify that a default project is already active, the project name will appear under **My Resources**. You can create a new project by right-clicking on the active project and selecting **Switch Default Project in Azure Resources**.
 
-    If a default project is already active, the project name will appear under **My Resources**. You can create a new project by right-clicking on the active project and selecting **Switch Default Project in Azure Resources**.
-
-6. Select your Azure subscription and resource group, then enter a name for your Foundry project to create a new project for this exercise.
-
-    When the deployment is complete, you should see the project appear in the Foundry Toolkit pane as the default project.
 
 ## Deploy a model
 
-At the core of any generative AI project, there’s at least one generative AI model. In this task, you'll deploy a model from the Model Catalog to use with your agent.
+At the core of any generative AI project, there’s at least one generative AI model. In this task, you'll deploy a model from the Model Catalog to use with your agent (we have already deployed a model - gpt-5.4-mini).
 
 1. When the "Project deployed successfully" popup appears, select the **Deploy a new model** button. This opens the Model Catalog.
 
    > **Tip**: You can also access the Model Catalog by selecting the **+** icon next to **Models** in the Resources section, or by pressing **F1** and running the command **Foundry Toolkit: Show model catalog**.
-
-1. In the Model Catalog, locate the **gpt-5** model (you can use the search bar to find it quickly).
-
-1. Select **Deploy** next to the gpt-5 model.
-
-1. Configure the deployment settings:
-   - **Deployment name**: Enter a name like "gpt-5"
-   - **Deployment type**: Select **Global Standard** (or **Standard** if Global Standard is not available)
-   - **Model version**: Leave as default
-   - **Tokens per minute**: Raise the Tokens per Minute limit to 150000 or higher.
-
-1. Select **Deploy to Microsoft Foundry** in the bottom-left corner.
-
-1. Wait for the deployment to complete. Your deployed model will appear under the **Models** section in the Resources view.
+   
+1. Your deployed model will appear under the **Models** section in the Resources view.
 
 1. Right-click the name of the project deployment and select **Copy Project Endpoint**. You'll need this URL to connect your agent to the Foundry project in the next steps.
 
     ![Screenshot of copying the project endpoint in the Foundry Toolkit VS Code extension.](../../Media/vs-code-endpoint.png)
 
-## Clone the starter code repository
+## Download the starter code repository
 
 For this exercise, you'll use starter code that will help you connect to your Foundry project and create an agent that uses MCP server tools.
 
-1. In VS Code, open the Command Palette (**Ctrl+Shift+P** or **View > Command Palette**).
-
-1. Type **Git: Clone** and select it from the list.
-
-1. Enter the repository URL:
-
-    ```
-   https://github.com/MicrosoftLearning/mslearn-ai-agents.git
-    ```
-
-1. Choose a location on your local machine to clone the repository.
-
-1. When prompted, select **Open** to open the cloned repository in VS Code.
-
-1. Once the repository opens, select **File > Open Folder** and navigate to `mslearn-ai-agents/Labfiles/03-mcp-integration`, then choose **Select Folder**.
-
-1. In the Explorer pane, expand the **Python** folder to view the code files for this exercise.
-
-1. Right-click on the **requirements.txt** file and select **Open in Integrated Terminal**.
-
-1. In the terminal, enter the following command to install the required Python packages in a virtual environment:
+1. In a browser like Microsoft Edge, browse the URL: https://github.com/Kiran-255666/Agentic_AI_Training_Foundations.git and download the repository into your VM.
+2. The Repository will get download in Downloads folder, right click the file and select Extract all to unzip the zip file.
+3. In VS Code, click on File menu, then select open Folder.
+4. Select the folder that you have unzipped in the previous step.
+5. Once the repository opens, select **File > Open Folder** and navigate to `mslearn-ai-agents/Labfiles/03-mcp-integration`, then choose **Select Folder**.
+6. In the Explorer pane, expand the **Python** folder to view the code files for this exercise.
+7. Right-click on the **requirements.txt** file and select **Open in Integrated Terminal**.
+8. In the terminal, enter the following command to install the required Python packages in a virtual environment:
 
     ```
    python -m venv labenv
@@ -109,11 +79,11 @@ For this exercise, you'll use starter code that will help you connect to your Fo
    pip install -r requirements.txt
     ```
 
-1. Open the **.env** file, replace the **your_project_endpoint** placeholder with the endpoint for your project (copied from the project deployment resource in the Foundry Toolkit extension) and ensure that the MODEL_DEPLOYMENT_NAME variable is set to your model deployment name. Use **Ctrl+S** to save the file after making these changes.
+1. Open the **.env** file, replace the **your_project_endpoint** placeholder with the endpoint for your project (copied from the project deployment resource in the Microsoft Foundry ) and ensure that the MODEL_DEPLOYMENT_NAME variable is set to your model deployment name. Use **Ctrl+S** to save the file after making these changes.
 
 Now you're ready to create an AI agent that uses MCP server tools to access external data sources and APIs.
 
-## Connect an Azure AI Agent to a remote MCP server
+## Connect an Azure AI Agent to a remote MCP server (Note: We have the code updated in the mentioned files instructions but verify before you start the execution, so that there are no indentation issues)
 
 In this task, you'll connect to a remote MCP server, prepare the AI agent, and run a user prompt.
 
@@ -242,7 +212,7 @@ In this task, you'll connect to a remote MCP server, prepare the AI agent, and r
 
 Now you're ready to run the application and see how the agent uses the MCP tool to retrieve information from the Microsoft Learn Docs remote MCP server.
 
-1. In the integrated terminal, enter the following command to run the application:
+1. In the integrated terminal, enter the following command to run the application :
 
     ```
    az login
