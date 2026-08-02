@@ -30,7 +30,7 @@ Before starting this exercise, ensure you have:
 > \* Python 3.13 is available, but some dependencies are not yet compiled for that release. The lab has been successfully tested with Python 3.13.12.
 
 ## Access your Foundry project with the Foundry Toolkit for VS Code extension 
-
+1. Before we start with this exercise, let's download Azure CLI using the link- https://aka.ms/installazurecliwindows (browser the URL in any browser to download it) and after downloading it, please install it.
 As a developer, you may spend some time working in the Foundry portal; but you’re also likely to spend a lot of time in Visual Studio Code. The Foundry Toolkit for VS Code extension provides a convenient way to work with Foundry project resources without leaving the development environment.
 
 1. Open Visual Studio Code.
