@@ -9,7 +9,7 @@ lab:
 ---
 
 # Create a generative AI app that uses tools
-
+1.Before we start this exercise, let's download Azure CLI: Install Azure CLI using the link-  https://aka.ms/installazurecliwindows (browse this URL in any browser), and after downloading, install it.
 In this exercise, you'll use the Microsoft Foundry portal and the Responses API to build an AI chat application. Then you'll integrate knowledge into your application by using the *web_search* and *file_search* tools.
 
 This exercise takes approximately **30** minutes.
