@@ -81,7 +81,7 @@ At the core of any generative AI project, there’s at least one generative AI m
 
 1. Right-click the name of the project deployment and select **Copy Project Endpoint**. You'll need this URL to connect your agent to the Foundry project in the next steps.
 
-    ![Screenshot of copying the project endpoint in the Foundry Toolkit VS Code extension.](../Media/vs-code-endpoint.png)
+    ![Screenshot of copying the project endpoint in the Foundry Toolkit VS Code extension.](../../Media/vs-code-endpoint.png)
 
 ## Clone the starter code repository
 
