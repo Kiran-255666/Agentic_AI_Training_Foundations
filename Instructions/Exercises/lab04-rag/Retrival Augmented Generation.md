@@ -23,7 +23,6 @@ Before starting this exercise, ensure you have:
 - An active [Azure subscription](https://azure.microsoft.com/pricing/purchase-options/azure-account)
 - [Visual Studio Code](https://code.visualstudio.com/) installed
 - [Python version **3.13.xx**](https://www.python.org/downloads/release/python-31312/) installed\*
-- [Git](https://git-scm.com/install/) installed and configured
 - [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) installed
 
 > \* Python 3.14 is available, but some dependencies are not yet compiled for that release. The lab has been successfully tested with Python 3.13.12.
@@ -100,17 +99,17 @@ The initial application files you'll need to develop your chat application are p
 
     > **Tip**: If you are prompted to install dependencies, you can install the ones in the *requirements.txt* file in the */labfiles/tools/python/tools-app* folder; but it's OK if you don't - we'll install them later!
 
-1. In the Explorer pane, navigate to the folder containing the application code files at **/labfiles/tools/python/tools-app**. The application files include:
+1. In the Explorer pane, navigate to the folder containing the application code files at **lab04-rag/python/tools-app**. The application files include:
     - **brochures** (a folder containing Margie's Travel brochures)
     - **.env** (the application configuration file)
     - **requirements.txt** (the Python package dependencies that need to be installed)
     - **tools-app.py** (the code file for the application)
 
-1. In the **Explorer** pane, right-click the **tools-app** folder containing the application files, and select **Open in integrated terminal** (or open a terminal in the **Terminal** menu and navigate to the */labfiles/tools/python/tools-app* folder.)
+1. In the **Explorer** pane, right-click the **tools-app** folder containing the application files, and select **Open in integrated terminal** (or open a terminal in the **Terminal** menu and navigate to the *lab04-rag/python/tools-app* folder.)
 
     > **Note**: Opening the terminal in Visual Studio Code will automatically activate the Python environment. You may need to enable running scripts on your system.
 
-1. Ensure that the terminal is open in the **/labfiles/tools/python/tools-app** folder with the prefix **(.venv)** to indicate that the Python environment you created is active.
+1. Ensure that the terminal is open in the **/lab04-rag/python/tools-app** folder with the prefix **(.venv)** to indicate that the Python environment you created is active.
 1. Install the OpenAI SDK, Azure identity, and other required packages by running the following command:
 
     ```
@@ -123,9 +122,9 @@ The initial application files you'll need to develop your chat application are p
 
     Save the modified configuration file.
 
-### Write code to implement chat with tools
+### Write code to implement chat with tools (We have already updated the mentioned files with the code mentioned in the instruction, but we would highly suggest going through it before executing it)
 
-1. In the **Explorer** pane, in the **/labfiles/tools/python/tools-app** folder, select the **tools-app.py** file to open it.
+1. In the **Explorer** pane, in the **/lab04-rag/python/tools-app** folder, select the **tools-app.py** file to open it.
 1. Review the existing code. You will add code to use the OpenAI SDK to access your model.
 
     > **Tip**: As you add code to the code file, be sure to maintain the correct indentation.
@@ -231,10 +230,4 @@ The initial application files you'll need to develop your chat application are p
 
 1. When you're finished, enter `quit` to exit the program.
 
-## Clean up
 
-If you've finished exploring Microsoft Foundry, you should delete the resources you have created in this exercise to avoid incurring unnecessary Azure costs.
-
-1. Open the [Azure portal](https://portal.azure.com) and view the contents of the resource group where you deployed the resources used in this exercise.
-1. On the toolbar, select **Delete resource group**.
-1. Enter the resource group name and confirm that you want to delete it.
