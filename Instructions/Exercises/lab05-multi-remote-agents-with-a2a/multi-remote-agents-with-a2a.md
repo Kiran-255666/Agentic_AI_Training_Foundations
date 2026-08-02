@@ -25,11 +25,11 @@ Before starting this exercise, ensure you have:
 - [Visual Studio Code](https://code.visualstudio.com/) installed on your local machine
 - An active [Azure subscription](https://azure.microsoft.com/free/)
 - [Python 3.13](https://www.python.org/downloads/) or later installed
-- [Git](https://git-scm.com/downloads) installed on your local machine
+
 
 > \* Python 3.13 is available, but some dependencies are not yet compiled for that release. The lab has been successfully tested with Python 3.13.12.
 
-## Create a Foundry project with the Foundry Toolkit for VS Code extension
+## Access your Foundry project with the Foundry Toolkit for VS Code extension 
 
 As a developer, you may spend some time working in the Foundry portal; but you’re also likely to spend a lot of time in Visual Studio Code. The Foundry Toolkit for VS Code extension provides a convenient way to work with Foundry project resources without leaving the development environment.
 
@@ -45,59 +45,32 @@ As a developer, you may spend some time working in the Foundry portal; but you�
 
     You should be prompted to sign in to your Azure account if you haven't already.
 
-5. Select **Create Project** under **Microsoft Foundry Resources**.
+5. verify that a default project is already active, the project name will appear under **My Resources**. You can create a new project by right-clicking on the active project and selecting **Switch Default Project in Azure Resources**.
 
-    If a default project is already active, the project name will appear under **My Resources**. You can create a new project by right-clicking on the active project and selecting **Switch Default Project in Azure Extension**.
 
-6. Select your Azure subscription and resource group, then enter a name for your Foundry project to create a new project for this exercise.
+## Verify the deployed model
 
-    When the deployment is complete, you should see the project appear in the Foundry Toolkit pane as the default project.
-
-## Deploy a model
-
-At the core of any generative AI project, there’s at least one generative AI model. In this task, you'll deploy a model from the Model Catalog to use with your agent.
+At the core of any generative AI project, there’s at least one generative AI model. In this task, you'll deploy a model from the Model Catalog to use with your agent (we have already deployed a model - gpt-5.4-mini).
 
 1. When the "Project deployed successfully" popup appears, select the **Deploy a new model** button. This opens the Model Catalog.
 
    > **Tip**: You can also access the Model Catalog by selecting the **+** icon next to **Models** in the Resources section, or by pressing **F1** and running the command **Foundry Toolkit: Show model catalog**.
-
-1. In the Model Catalog, locate the **gpt-5** model (you can use the search bar to find it quickly).
-
-1. Select **Deploy** next to the gpt-5 model.
-
-1. Configure the deployment settings:
-   - **Deployment name**: Enter a name like "gpt-5"
-   - **Deployment type**: Select **Global Standard** (or **Standard** if Global Standard is not available)
-   - **Model version**: Leave as default
-   - **Tokens per minute**: Leave as default
-
-1. Select **Deploy to Microsoft Foundry** in the bottom-left corner.
-
-1. Wait for the deployment to complete. Your deployed model will appear under the **Models** section in the Resources view.
+   
+1. Your deployed model will appear under the **Models** section in the Resources view.
 
 1. Right-click the name of the project deployment and select **Copy Project Endpoint**. You'll need this URL to connect your agent to the Foundry project in the next steps.
 
     ![Screenshot of copying the project endpoint in the Foundry Toolkit VS Code extension.](../../Media/vs-code-endpoint.png)
 
-## Clone the starter code repository
+## Download the starter code repository
 
-For this exercise, you'll use starter code that will help you connect to your Foundry project and create an agent that can process expenses data. You'll clone this code from a GitHub repository.
+For this exercise, you'll use starter code that will help you connect to your Foundry project and create an agent that uses MCP server tools.
 
-1. In VS Code, open the Command Palette (**Ctrl+Shift+P** or **View > Command Palette**).
-
-1. Type **Git: Clone** and select it from the list.
-
-1. Enter the repository URL:
-
-    ```
-   https://github.com/MicrosoftLearning/mslearn-ai-agents.git
-    ```
-
-1. Choose a location on your local machine to clone the repository.
-
-1. When prompted, select **Open** to open the cloned repository in VS Code.
-
-1. Once the repository opens, select **File > Open Folder** and navigate to `mslearn-ai-agents/Labfiles/09-build-remote-agents-with-a2a`, then choose **Select Folder**.
+1. In a browser like Microsoft Edge, browse the URL: https://github.com/Kiran-255666/Agentic_AI_Training_Foundations.git and download the repository into your VM.
+2. The Repository will get download in Downloads folder, right click the file and select Extract all to unzip the zip file.
+3. In VS Code, click on File menu, then select open Folder.
+4. Select the folder that you have unzipped in the previous step.
+1. Once the repository opens, Open Visual Studio code, select **File > Open Folder** and navigate to `mslearn-ai-agents/Labfiles/09-build-remote-agents-with-a2a`, then choose **Select Folder**.
 
 1. In the Explorer pane, expand the **Python** folder to view the code files for this exercise.
 
@@ -136,7 +109,7 @@ For this exercise, you'll use starter code that will help you connect to your Fo
 
 1. Open the **.env** file, replace the **your_project_endpoint** placeholder with the endpoint for your project (copied from the project deployment resource in the Foundry Toolkit extension) and ensure that the MODEL_DEPLOYMENT_NAME variable is set to your model deployment name. Use **Ctrl+S** to save the file after making these changes.
 
-## Create a discoverable agent
+## Create a discoverable agent (We have already updated the mentioned files with the code mentioned in the instructions, but we would highly suggest going through it before executing it)
 
 In this task, you create the title agent that helps writers create trendy headlines for their articles. You also define the agent's skills and card required by the A2A protocol to make the agent discoverable.
 
@@ -201,6 +174,7 @@ In this task, you create the title agent that helps writers create trendy headli
 1. Open the **title_agent/server.py** file in the code editor.
 
 1. Find the comment **Define agent skills** and add the following code to specify the agent’s functionality:
+   **(We have already updated the mentioned files with the code mentioned in the instructions, but we would highly suggest going through it before executing it)**
 
     ```python
    # Define agent skills
@@ -265,7 +239,7 @@ In this task, you create the title agent that helps writers create trendy headli
 
 1. Save the code file (*CTRL+S*) when you have finished.
 
-## Enable messages between the agents
+## Enable messages between the agents (We have already updated the mentioned files with the code mentioned in the instructions, but we would highly suggest going through it before executing it)
 
 In this task, you use the A2A protocol to enable the routing agent to send messages to the other agents. You also allow the title agent to receive messages by implementing the agent executor class.
 
@@ -319,7 +293,7 @@ In this task, you use the A2A protocol to enable the routing agent to send messa
 
 1. Save the code file (*CTRL+S*) when you have finished. Now the routing agent is able to discover and send messages to the title agent. Let's create the agent executor code to handle those incoming messages from the routing agent.
 
-1. Open the **title_agent/agent_executor.py** file in the code editor.
+1. Open the **title_agent/agent_executor.py** file in the code editor. (We have already updated the mentioned files with the code mentioned in the instructions, but we would highly suggest going through it before executing it)
 
     The `AgentExecutor` class implementation must contain the methods `execute` and `cancel`. The cancel method has been provided for you. The `execute` method includes a `TaskUpdater` object that manages events and signals to the caller when the task is complete. Let's add the logic for task execution.
 
@@ -403,9 +377,7 @@ In this task, you use the A2A protocol to enable the routing agent to send messa
 
     You can also use `deactivate` to exit the Python virtual environment in the terminal.
 
-## Clean up
 
-If you've finished exploring Azure AI Agent Service, you should delete the resources you have created in this exercise to avoid incurring unnecessary Azure costs.
 
 1. Return to the browser tab containing the Azure portal (or re-open the [Azure portal](https://portal.azure.com) at `https://portal.azure.com` in a new browser tab) and view the contents of the resource group where you deployed the resources used in this exercise.
 1. On the toolbar, select **Delete resource group**.
