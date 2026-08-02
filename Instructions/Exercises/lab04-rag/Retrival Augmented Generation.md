@@ -27,7 +27,7 @@ Before starting this exercise, ensure you have:
 
 > \* Python 3.14 is available, but some dependencies are not yet compiled for that release. The lab has been successfully tested with Python 3.13.12.
 
-# Create a Microsoft Foundry project
+# Verify the created Microsoft Foundry project
 
 Microsoft Foundry uses projects to organize models, resources, data, and other assets used to develop an AI solution.
 
@@ -37,7 +37,7 @@ Microsoft Foundry uses projects to organize models, resources, data, and other a
 
 1. Click on the project to access the project.
 
-## Deploy a model
+## Verify the deployed model
 
 Next, let's verify the deployed model that you'll use in your chat application.
 
