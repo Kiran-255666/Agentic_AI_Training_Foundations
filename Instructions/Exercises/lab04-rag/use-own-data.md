@@ -34,22 +34,16 @@ Microsoft Foundry uses projects to organize models, resources, data, and other a
 
 1. In a web browser, open the [Microsoft Foundry portal](https://ai.azure.com) at `https://ai.azure.com` to start building; signing in using your Azure credentials. Close any tips or quick start panes that are opened the first time you sign in.
 
-1. If it is not already enabled, in the tool bar at the top of the page, enable the **New Foundry** option. Then, if prompted, create a new project with a unique name; expanding the **Advanced options** area to specify the following settings for your project:
-    - **Foundry resource**: *Use the default name for your resource (usually {project_name}-resource)*
-    - **Subscription**: *Your Azure subscription*
-    - **Resource group**: *Create or select a resource group*
-    - **Region**: Select any of the **AI Foundry recommended** regions in **[this list](https://learn.microsoft.com/azure/foundry/openai/how-to/responses#region-availability)**{:target="_blank"}
+1.Locate the project that is created already with name - **hakunamtata1**
 
-1. Wait for your project to be created. Then view its home page.
+1. Click on the project to access the project.
 
 ## Deploy a model
 
-Next, let's deploy a model that you'll use in your chat application.
+Next, let's verify the deployed model that you'll use in your chat application.
 
-1.  Now you're ready to explore models. On the **Discover** page, select the **Models** tab to view the Microsoft Foundry model catalog.
-1. In the model catalog, search for `gpt-5.2`.
-1. Review the model card, and then deploy it using the default settings.
-1. When the model has been deployed, it will open in the model playground.
+
+1. Once the Microsoft Foundry project is open, locate the Playgrounds section and open the chat playground. Verify that the **gpt-5.4-mini** model is auto-selected.
 
 ## Experiment with tools in the playground
 
@@ -93,10 +87,11 @@ You'll need an endpoint to connect to the model from a client application. In th
 
 The initial application files you'll need to develop your chat application are provided in a GitHub repo.
 
-1. Open Visual Studio Code.
-1. Open the command palette (*Ctrl+Shift+P*) and use the `Git:clone` command to clone the `https://github.com/microsoftlearning/mslearn-ai-studio` repo to a local folder (it doesn't matter which one). Then open it.
-
-    You may be prompted to confirm you trust the authors.
+1. In a browser like Microsoft Edge, browse the URL: https://github.com/Kiran-255666/Agentic_AI_Training_Foundations.git and download the repository into your VM.
+2. The Repository will get download in Downloads folder, right click the file and select Extract all to unzip the zip file.
+3. In Visual Studio Code, click on File menu, then select open Folder.
+4. Select the folder that you have unzipped in the previous step.
+5. You may be prompted to confirm you trust the authors. Click on **yes, I trust the authors.**
 
 ### Prepare the application configuration
 
