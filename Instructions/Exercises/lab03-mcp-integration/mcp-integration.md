@@ -30,9 +30,15 @@ Before starting this exercise, ensure you have:
 
 ## Access your Foundry project with the Foundry Toolkit for VS Code extension 
 
-1. Before we start with the lab, lets install Azure CLI uisng the link - https://aka.ms/installazurecliwindows (paste the link in the browser to download it) and after downloading, click on install.
+1. Before starting the lab, install Azure CLI using the following link: [https://aka.ms/installazurecliwindows](https://aka.ms/installazurecliwindows). Click the link to download the installer. The download will start automatically and the installer will be available in your **Downloads** folder. If the download does not start automatically, copy and paste the link into your browser.
 
-As a developer, you may spend some time working in the Foundry portal; but you’re also likely to spend a lot of time in Visual Studio Code. The Foundry Toolkit for VS Code extension provides a convenient way to work with Foundry project resources without leaving the development environment.
+    ![Screenshot of the Azure CLI installer downloaded in the Downloads folder.](../../Media/azure-cli-download.png)
+
+2. After the download is complete, run the installer and follow the installation steps.
+
+    ![Screenshot of the Azure CLI installation setup wizard.](../../Media/azure-cli-install-wizard.png)
+
+As a developer, you may spend time working in the Microsoft Foundry portal, but most development tasks are typically performed in Visual Studio Code. The Foundry Toolkit extension enables you to work with Foundry project resources directly within Visual Studio Code, allowing you to stay within your development environment.
 
 1. Open Visual Studio Code.
 
@@ -40,21 +46,59 @@ As a developer, you may spend some time working in the Foundry portal; but you�
 
 3. Search the Extensions Marketplace for the **Foundry Toolkit** extension from Microsoft and select **Install**.
 
-    > **Note**: The extension is currently listed as **Foundry Toolkit**, but some VS Code labels, commands, or older screenshots may still refer to **AI Toolkit**. In this lab, treat those names as referring to the same extension experience.
+    > **Note**: The extension is currently listed as **Foundry Toolkit for VS Code**, but some VS Code labels, commands, or older screenshots may still refer to **AI Toolkit**. In this lab, treat those names as referring to the same extension experience. Below is a snippet of the new version, which is the official **Foundry Toolkit for VS Code** extension published by Microsoft.
+
+    ![Screenshot of the Foundry Toolkit for VS Code extension in the Extensions Marketplace.](../../Media/foundry-toolkit-extension.png)
 
 4. After installing the extension, select its icon in the sidebar to open the Foundry Toolkit view.
 
-5. Open the integrated terminal and run the following command to sign in to Azure:
+    You'll initially see the default **My Resources** and **Developer Tools** sections in the panel, but they won't be populated with your actual project data. To use the extension's full functionality and complete this lab, you need to sign in to your Azure account.
+
+    ![Screenshot of the Foundry Toolkit sidebar showing My Resources and Developer Tools sections before sign-in.](../../Media/foundry-toolkit-sidebar.png)
+
+5. Open the integrated terminal (**Ctrl+Shift+`**) and run the following command to sign in to Azure:
 
     ```powershell
     az login
     ```
 
-    Complete the sign-in process in the browser window that opens and authenticate using your assigned Azure account.
+    A browser window will open automatically, asking you to sign in. Select the email address provided by your trainer, then select **Continue**.
 
-6. Verify that a default project is already active. The project name will appear under **My Resources**.
+    Back in the terminal, you'll see a prompt similar to:
 
-    > **Tip**: To switch to a different project, right-click the active project and select **Switch Default Project in Azure Resources**.
+    ```
+    Select a subscription and tenant (Type a number or Enter for no changes):
+    ```
+
+    Type **1** and press **Enter** to select the default subscription (or the one provided by your trainer). You'll then see confirmation that the default subscription has been set, along with your account details.
+
+    > **Note**: Sometimes you might additionally be prompted to sign in to Azure below this step too — if so, complete that sign-in the same way, using the same assigned account. You might be prompted to authenticate more than once during the setup process. If prompted, use the same assigned account to complete each authentication request.
+
+    If the sign-in completes without any issues, skip ahead to step 8. If you see an error saying the `az` command isn't recognized, go to step 6. If the sign-in window closes or gets cancelled partway through, go to step 7.
+
+6. If the `az` command isn't recognized (e.g., `'az' is not recognized as a name of a cmdlet, function, script file, or executable program`), Azure CLI likely isn't installed correctly, or the terminal session started before the installation finished updating your PATH.
+
+    > **Troubleshooting**: To fix this:
+    > 1. Close and reopen the integrated terminal (or restart VS Code entirely), then try `az login` again.
+    > 2. If the error persists, uninstall and reinstall Azure CLI using the following commands:
+    >    ```powershell
+    >    winget uninstall Microsoft.AzureCLI
+    >    winget install Microsoft.AzureCLI
+    >    ```
+    > 3. Restart the terminal after installation completes, then run `az login` again.
+
+7. If the sign-in window is closed accidentally or cancelled (you may see `User cancelled the Accounts Control Operation`), run the following commands to reset the session and try again:
+
+    ```powershell
+    az logout
+    az login
+    ```
+
+8. Verify that a default project is already active. The project name will appear under **My Resources**.
+
+    > **Tip**: To switch to a different project, select **Models** in the left panel under **My Resources**. You'll see two options: **Switch Project** and **Choose Project**. Select **Switch Project** to change your default Azure Resources project.
+
+    ![Screenshot of the Foundry Toolkit sidebar showing the active default project under My Resources after signing in.](../../Media/foundry-toolkit-default-project.png)
 
 ## Download the starter code repository
 
@@ -66,7 +110,7 @@ For this exercise, you'll use starter code that will help you connect to your Fo
 4. Select the folder that you have unzipped in the previous step.
 5. Once the repository opens, from Visual Studio Code, select **File > Open Folder** and navigate to `Agentic_AI_Training_Foundations/Labfiles/03-mcp-integration`, then choose **Select Folder**.
 6. In the Explorer pane, expand the **Python** folder to view the code files for this exercise.
-7. Right-click on the **requirements.txt** file and select **Open in Integrated Terminal**.
+7. Right**lick the **requirements.txt** file and select **Open in Integrated Terminal**. Alternatively, press **Ctrl+Shift+`** to open the integrated terminal and navigate to the file location.
 8. In the terminal, enter the following command to install the required Python packages in a virtual environment:
 
     ```
@@ -91,7 +135,7 @@ In this task, you'll connect to a remote MCP server, prepare the AI agent, and r
 
     ```python
    # Add references
-   from azure.identity import DefaultAzureCredential
+   from azure.identity import AzureCliCredential
    from azure.ai.projects import AIProjectClient
    from azure.ai.projects.models import PromptAgentDefinition, MCPTool
    from openai.types.responses.response_input_param import McpApprovalResponse, ResponseInputParam
@@ -102,7 +146,7 @@ In this task, you'll connect to a remote MCP server, prepare the AI agent, and r
     ```python
    # Connect to the agents client
    with (
-       DefaultAzureCredential() as credential,
+       AzureCliCredential() as credential,
        AIProjectClient(endpoint=project_endpoint, credential=credential) as project_client,
        project_client.get_openai_client() as openai_client,
    ):
@@ -208,14 +252,22 @@ In this task, you'll connect to a remote MCP server, prepare the AI agent, and r
 
 Now you're ready to run the application and see how the agent uses the MCP tool to retrieve information from the Microsoft Learn Docs remote MCP server.
 
-1. In the integrated terminal, enter the following command to run the application :
+1. Before running the application, verify that you're signed in to Azure by running:
 
-    ```
-   az login
+    ```powershell
+    az account show
     ```
 
+    If your account details are displayed successfully, proceed to the next step. If you aren't signed in or an error is returned, sign in using:
+
+    ```powershell
+    az login
     ```
-   python agent.py
+
+2. Run the application:
+
+    ```powershell
+    python agent.py
     ```
 
 1. Wait for the agent to process the prompt, using the MCP server to find a suitable tool to retrieve the requested information. You should see some output similar to the following:
@@ -501,5 +553,3 @@ In this task, you'll connect the MCP server tools to your agent so that it can c
 1. Enter `quit` to exit the application.
 
     You can also use `deactivate` to exit the Python virtual environment in the terminal.
-
-
