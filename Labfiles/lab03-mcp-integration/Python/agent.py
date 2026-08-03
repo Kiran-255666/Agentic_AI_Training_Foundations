@@ -3,7 +3,9 @@ from dotenv import load_dotenv
 
 
 # Add references
-from azure.identity import DefaultAzureCredential
+# from azure.identity import DefaultAzureCredential 
+
+from azure.identity import AzureCliCredential #AzureCliCredential is used to authenticate through the active Azure CLI login session.
 from azure.ai.projects import AIProjectClient
 from azure.ai.projects.models import PromptAgentDefinition, MCPTool
 from openai.types.responses.response_input_param import McpApprovalResponse, ResponseInputParam
@@ -17,7 +19,8 @@ model_deployment = os.getenv("MODEL_DEPLOYMENT_NAME")
 
 # Connect to the agents client
 with (
-    DefaultAzureCredential() as credential,
+    #DefaultAzureCredential() as credential,
+    AzureCliCredential() as credential,
     AIProjectClient(endpoint=project_endpoint, credential=credential) as project_client,
     project_client.get_openai_client() as openai_client,
 ):
