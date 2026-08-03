@@ -74,7 +74,7 @@ For this exercise, you'll use starter code that will help you connect to your Fo
 
 1. In the Explorer pane, expand the **Python** folder to view the code files for this exercise.
 
-1. In the Explorer view, navigate to the **Labfiles/09-build-remote-agents-with-a2a/Python** folder to find the starter code for this exercise.
+1. In the Explorer view, navigate to the **Labfiles/lab05-multi-remote-agents-with-a2a/Python** folder to find the starter code for this exercise.
 
     The provided files include:
 
