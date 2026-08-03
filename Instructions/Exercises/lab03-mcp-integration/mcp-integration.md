@@ -56,20 +56,6 @@ As a developer, you may spend some time working in the Foundry portal; but youâ€
 
     > **Tip**: To switch to a different project, right-click the active project and select **Switch Default Project in Azure Resources**.
 
-## Verify the deployed model
-
-At the core of any generative AI project, thereâ€™s at least one generative AI model. In this task, you'll deploy a model from the Model Catalog to use with your agent (we have already deployed a model - gpt-5.4-mini).
-
-1. When the "Project deployed successfully" popup appears, select the **Deploy a new model** button. This opens the Model Catalog.
-
-   > **Tip**: You can also access the Model Catalog by selecting the **+** icon next to **Models** in the Resources section, or by pressing **F1** and running the command **Foundry Toolkit: Show model catalog**.
-   
-1. Your deployed model will appear under the **Models** section in the Resources view.
-
-1. Right-click the name of the project deployment and select **Copy Project Endpoint**. You'll need this URL to connect your agent to the Foundry project in the next steps.
-
-    ![Screenshot of copying the project endpoint in the Foundry Toolkit VS Code extension.](../../Media/vs-code-endpoint.png)
-
 ## Download the starter code repository
 
 For this exercise, you'll use starter code that will help you connect to your Foundry project and create an agent that uses MCP server tools.
