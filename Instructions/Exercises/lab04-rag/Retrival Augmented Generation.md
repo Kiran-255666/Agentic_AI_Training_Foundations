@@ -97,7 +97,7 @@ You'll need an endpoint to connect to the model from a client application. In th
 
 1. Note the **Azure OpenAI Endpoint** displayed there.
 
-    ![Screenshot of the Azure OpenAI Endpoint on the Foundry project Home page](./images/azure-openai-endpoint.png)
+![Screenshot of the Azure OpenAI Endpoint on the Foundry project Home page](../../Media/azure-openai-endpoint.png)
 
     > **Tip**: You'll use the **Azure OpenAI Endpoint** in this exercise, <u>not</u> the project endpoint! You can find this endpoint directly on the [Microsoft Foundry](https://ai.azure.com) project Home page, listed alongside the **API key** and **Project endpoint** fields.
 
