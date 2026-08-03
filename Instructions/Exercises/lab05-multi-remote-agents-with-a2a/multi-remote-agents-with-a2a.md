@@ -70,7 +70,7 @@ For this exercise, you'll use starter code that will help you connect to your Fo
 2. The Repository will get download in Downloads folder, right click the file and select Extract all to unzip the zip file.
 3. In VS Code, click on File menu, then select open Folder.
 4. Select the folder that you have unzipped in the previous step.
-1. Once the repository opens, Open Visual Studio code, select **File > Open Folder** and navigate to `Agentic_AI_Training_Foundations/Labfiles/09-build-remote-agents-with-a2a`, then choose **Select Folder**.
+1. Once the repository opens, Open Visual Studio code, select **File > Open Folder** and navigate to `Agentic_AI_Training_Foundations/Labfiles/lab05-multi-remote-agents-with-a2a`
 
 1. In the Explorer pane, expand the **Python** folder to view the code files for this exercise.
 
