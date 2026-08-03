@@ -110,7 +110,7 @@ For this exercise, you'll use starter code that will help you connect to your Fo
 4. Select the folder that you have unzipped in the previous step.
 5. Once the repository opens, from Visual Studio Code, select **File > Open Folder** and navigate to `Agentic_AI_Training_Foundations/Labfiles/03-mcp-integration`, then choose **Select Folder**.
 6. In the Explorer pane, expand the **Python** folder to view the code files for this exercise.
-7. Right**lick the **requirements.txt** file and select **Open in Integrated Terminal**. Alternatively, press **Ctrl+Shift+`** to open the integrated terminal and navigate to the file location.
+7. Right-click the **requirements.txt** file and select **Open in Integrated Terminal**. Alternatively, press **Ctrl+Shift+`** to open the integrated terminal and navigate to the file location.
 8. In the terminal, enter the following command to install the required Python packages in a virtual environment:
 
     ```
