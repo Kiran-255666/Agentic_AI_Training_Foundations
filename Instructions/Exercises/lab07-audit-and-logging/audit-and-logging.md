@@ -1,4 +1,4 @@
-***
+---
 lab:
     title: 'Implement Real-Time Audit & Transition Logging'
     description: 'Build a state transition logger that records structured JSON audit trails for AI pipeline observability.'
@@ -6,7 +6,7 @@ lab:
     duration: 60
     islab: true
     status: 'released'
-***
+---
 
 # Implementing Real-Time Audit & Transition Logging
 
