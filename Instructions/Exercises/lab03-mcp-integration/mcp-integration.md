@@ -96,7 +96,7 @@ As a developer, you may spend time working in the Microsoft Foundry portal, but 
 
 8. Verify that a default project is already active. The project name will appear under **My Resources**.
 
-    > **Tip**: To switch to a different project, select **Models** in the left panel under **My Resources**. You'll see two options: **Switch Project** and **Choose Project**. Select **Switch Project** to change your default Azure Resources project.
+    > **Tip**: To switch to a different project, select **Models** in the left panel under **My Resources**. You'll see two options: **Switch Project** and **Create Project**. Select **Switch Project** to change your default Azure Resources project.
 
     ![Screenshot of the Foundry Toolkit sidebar showing the active default project under My Resources after signing in.](../../Media/foundry-toolkit-default-project.png)
 
@@ -119,7 +119,13 @@ For this exercise, you'll use starter code that will help you connect to your Fo
    pip install -r requirements.txt
     ```
 
-1. Open the **.env** file, replace the **your_project_endpoint** placeholder with the endpoint for your project (copied from the project deployment resource in the Microsoft Foundry ) and ensure that the MODEL_DEPLOYMENT_NAME variable is set to your model deployment name. Use **Ctrl+S** to save the file after making these changes.
+1. Open the **.env** file, replace the **your_project_endpoint** placeholder with the endpoint for your project, and ensure that the `MODEL_DEPLOYMENT_NAME` variable is set to your model deployment name. Use **Ctrl+S** to save the file after making these changes.
+
+    > **Tip**: You can find these values in the [Microsoft Foundry portal](https://ai.azure.com). Open your project's **Home** page, and you'll see the **Project endpoint** and **Azure OpenAI endpoint** fields listed alongside your API key. Select the copy icon next to **Project endpoint** to copy it directly into your `.env` file.
+
+    ![Screenshot of the Microsoft Foundry project Home page showing the API key, Project endpoint, and Azure OpenAI endpoint fields.](../../Media/foundry-project-home-endpoints.png)
+
+    > **Security Note**: Never share your API key, endpoints, or `.env` file with anyone, or commit them to a public repository. Treat these values as sensitive credentials at all times.
 
 Now you're ready to create an AI agent that uses MCP server tools to access external data sources and APIs.
 
