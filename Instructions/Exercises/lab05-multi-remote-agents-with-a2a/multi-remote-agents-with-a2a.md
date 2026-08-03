@@ -39,21 +39,59 @@ As a developer, you may spend some time working in the Foundry portal; but youâ€
 
 3. Search the Extensions Marketplace for the **Foundry Toolkit** extension from Microsoft and select **Install**.
 
-    > **Note**: The extension is currently listed as **Foundry Toolkit**, but some VS Code labels, commands, or older screenshots may still refer to **AI Toolkit**. In this lab, treat those names as referring to the same extension experience.
+    > **Note**: The extension is currently listed as **Foundry Toolkit for VS Code**, but some VS Code labels, commands, or older screenshots may still refer to **AI Toolkit**. In this lab, treat those names as referring to the same extension experience. Below is a snippet of the new version, which is the official **Foundry Toolkit for VS Code** extension published by Microsoft.
+
+    ![Screenshot of the Foundry Toolkit for VS Code extension in the Extensions Marketplace.](../../Media/foundry-toolkit-extension.png)
 
 4. After installing the extension, select its icon in the sidebar to open the Foundry Toolkit view.
 
-5. Open the integrated terminal and run the following command to sign in to Azure:
+    You'll initially see the default **My Resources** and **Developer Tools** sections in the panel, but they won't be populated with your actual project data. To use the extension's full functionality and complete this lab, you need to sign in to your Azure account.
+
+    ![Screenshot of the Foundry Toolkit sidebar showing My Resources and Developer Tools sections before sign-in.](../../Media/foundry-toolkit-sidebar.png)
+
+5. Open the integrated terminal (**Ctrl+Shift+`**) and run the following command to sign in to Azure:
 
     ```powershell
     az login
     ```
 
-    Complete the sign-in process in the browser window that opens and authenticate using your assigned Azure account.
+    A browser window will open automatically, asking you to sign in. Select the email address provided by your trainer, then select **Continue**.
 
-6. Verify that a default project is already active. The project name will appear under **My Resources**.
+    Back in the terminal, you'll see a prompt similar to:
 
-    > **Tip**: To switch to a different project, right-click the active project and select **Switch Default Project in Azure Resources**.
+    ```
+    Select a subscription and tenant (Type a number or Enter for no changes):
+    ```
+
+    Type **1** and press **Enter** to select the default subscription (or the one provided by your trainer). You'll then see confirmation that the default subscription has been set, along with your account details.
+
+    > **Note**: Sometimes you might additionally be prompted to sign in to Azure below this step too â€” if so, complete that sign-in the same way, using the same assigned account. You might be prompted to authenticate more than once during the setup process. If prompted, use the same assigned account to complete each authentication request.
+
+    If the sign-in completes without any issues, skip ahead to step 8. If you see an error saying the `az` command isn't recognized, go to step 6. If the sign-in window closes or gets cancelled partway through, go to step 7.
+
+6. If the `az` command isn't recognized (e.g., `'az' is not recognized as a name of a cmdlet, function, script file, or executable program`), Azure CLI likely isn't installed correctly, or the terminal session started before the installation finished updating your PATH.
+
+    > **Troubleshooting**: To fix this:
+    > 1. Close and reopen the integrated terminal (or restart VS Code entirely), then try `az login` again.
+    > 2. If the error persists, uninstall and reinstall Azure CLI using the following commands:
+    >    ```powershell
+    >    winget uninstall Microsoft.AzureCLI
+    >    winget install Microsoft.AzureCLI
+    >    ```
+    > 3. Restart the terminal after installation completes, then run `az login` again.
+
+7. If the sign-in window is closed accidentally or cancelled (you may see `User cancelled the Accounts Control Operation`), run the following commands to reset the session and try again:
+
+    ```powershell
+    az logout
+    az login
+    ```
+
+8. Verify that a default project is already active. The project name will appear under **My Resources**.
+
+    > **Tip**: To switch to a different project, select **Models** in the left panel under **My Resources**. You'll see two options: **Switch Project** and **Create Project**. Select **Switch Project** to change your default Azure Resources project.
+
+    ![Screenshot of the Foundry Toolkit sidebar showing the active default project under My Resources after signing in.](../../Media/foundry-toolkit-default-project.png)
 
 ## Download the starter code repository
 
@@ -100,7 +138,7 @@ For this exercise, you'll use starter code that will help you connect to your Fo
    pip install -r requirements.txt
     ```
 
-1. Open the **.env** file, replace the **your_project_endpoint** placeholder with the endpoint for your project (copied from the project deployment resource in the Foundry Toolkit extension) and ensure that the MODEL_DEPLOYMENT_NAME variable is set to your model deployment name. Use **Ctrl+S** to save the file after making these changes.
+1. Open the **.env** file, replace the **your_project_endpoint** placeholder with the endpoint for your project copied from the project deployment resource in the Foundry Toolkit extension. If the endpoint does not work, copy the **Project endpoint** from your project in the Azure AI Foundry portal (**https://ai.azure.com/**). Ensure that the **MODEL_DEPLOYMENT_NAME** variable is set to your model deployment name, then use **Ctrl+S** to save the file.
 
 ## Create a discoverable agent (We have already updated the mentioned files with the code mentioned in the instructions, but we would highly suggest going through it before executing it)
 
@@ -346,17 +384,26 @@ In this task, you use the A2A protocol to enable the routing agent to send messa
 
 ## Test the application
 
-1. In the integrated terminal, enter the following commands to run the application:
+1. In the integrated terminal, check whether you're already signed in to Azure:
 
-    ```
-   az login
-    ```
-
-    ```
-   python run_all.py
+    ```bash
+    az account show
     ```
 
-    The application runs using the credentials for your authenticated Azure session to connect to your project and create and run the agent. You should see some output from each server as it starts.
+    - If the command displays your account details, you're already signed in and can proceed to the next step.
+    - If it returns an error or no account information, sign in by running:
+
+    ```bash
+    az login
+    ```
+
+1. Run the application:
+
+    ```bash
+    python run_all.py
+    ```
+
+    The application uses the credentials from your authenticated Azure session to connect to your Azure AI Foundry project and create and run the agent. You should see output from each server as it starts.
 
 1. Wait until the prompt for input appears, then enter a prompt such as:
 
