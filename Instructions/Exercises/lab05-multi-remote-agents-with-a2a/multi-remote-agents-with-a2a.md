@@ -37,30 +37,23 @@ As a developer, you may spend some time working in the Foundry portal; but youâ€
 
 2. Select **Extensions** from the left pane (or press **Ctrl+Shift+X**).
 
-3. Search the extensions marketplace for the `Foundry Toolkit` extension from Microsoft and select **Install**.
+3. Search the Extensions Marketplace for the **Foundry Toolkit** extension from Microsoft and select **Install**.
 
     > **Note**: The extension is currently listed as **Foundry Toolkit**, but some VS Code labels, commands, or older screenshots may still refer to **AI Toolkit**. In this lab, treat those names as referring to the same extension experience.
 
 4. After installing the extension, select its icon in the sidebar to open the Foundry Toolkit view.
 
-    You should be prompted to sign in to your Azure account if you haven't already.
+5. Open the integrated terminal and run the following command to sign in to Azure:
 
-5. verify that a default project is already active, the project name will appear under **My Resources**. You can create a new project by right-clicking on the active project and selecting **Switch Default Project in Azure Resources**.
+    ```powershell
+    az login
+    ```
 
+    Complete the sign-in process in the browser window that opens and authenticate using your assigned Azure account.
 
-## Verify the deployed model
+6. Verify that a default project is already active. The project name will appear under **My Resources**.
 
-At the core of any generative AI project, thereâ€™s at least one generative AI model. In this task, you'll deploy a model from the Model Catalog to use with your agent (we have already deployed a model - gpt-5.4-mini).
-
-1. When the "Project deployed successfully" popup appears, select the **Deploy a new model** button. This opens the Model Catalog.
-
-   > **Tip**: You can also access the Model Catalog by selecting the **+** icon next to **Models** in the Resources section, or by pressing **F1** and running the command **Foundry Toolkit: Show model catalog**.
-   
-1. Your deployed model will appear under the **Models** section in the Resources view.
-
-1. Right-click the name of the project deployment and select **Copy Project Endpoint**. You'll need this URL to connect your agent to the Foundry project in the next steps.
-
-    ![Screenshot of copying the project endpoint in the Foundry Toolkit VS Code extension.](../../Media/vs-code-endpoint.png)
+    > **Tip**: To switch to a different project, right-click the active project and select **Switch Default Project in Azure Resources**.
 
 ## Download the starter code repository
 
