@@ -5,7 +5,8 @@ import glob
 
 # Import namespaces
 from openai import OpenAI
-from azure.identity import DefaultAzureCredential, get_bearer_token_provider
+# Use the active Azure CLI authenticated session for Azure OpenAI access
+from azure.identity import AzureCliCredential, get_bearer_token_provider
 
 
 def main(): 
@@ -17,12 +18,12 @@ def main():
         # Get configuration settings 
         load_dotenv()
         azure_openai_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
-        model_deployment = os.getenv("MODEL_DEPLOYMENT")
-
+        # Read the deployed model name from the environment configuration
+        model_deployment = os.getenv("MODEL_DEPLOYMENT_NAME")
 
         # Initialize the OpenAI client
         token_provider = get_bearer_token_provider(
-            DefaultAzureCredential(), "https://ai.azure.com/.default"
+            AzureCliCredential(), "https://ai.azure.com/.default"
         )
 
         openai_client = OpenAI(
