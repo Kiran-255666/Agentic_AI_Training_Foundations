@@ -405,13 +405,17 @@ In this task, you use the A2A protocol to enable the routing agent to send messa
 
     The application uses the credentials from your authenticated Azure session to connect to your Azure AI Foundry project and create and run the agent. You should see output from each server as it starts.
 
+    ![Screenshot of the application starting and connecting each server](../../Media/application-start-lab5.jpg)
+
 1. Wait until the prompt for input appears, then enter a prompt such as:
 
     ```
-   Create a title and outline for an article about React programming.
+    Create a title and outline for an article about React programming.
     ```
 
-    After a few moments, you should see a response from the agent with the results.
+    After a few moments, you should see a response from the agent with the result.
+
+    ![Screenshot of the agent's response with the generated title and outline](../../Media/lab5result.jpg)
 
 1. Enter `quit` to exit the program and stop the servers.
 
