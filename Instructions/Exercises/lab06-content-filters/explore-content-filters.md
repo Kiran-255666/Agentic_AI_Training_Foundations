@@ -98,7 +98,7 @@ When the default guardrail doesn't meet your needs, you can create custom guardr
 
 1. Select **Next** when you've modified the content filter settings for all four risk categories.
 
-1. On the **Select agents and models** section, select **Models**, and then apply the new guardrail to the **gpt-5.2** model.
+1. On the **Select agents and models** section, select **Models**, and then apply the new guardrail to the **gpt-5.4-mini** model.
 
 1. On the **Review** section, read the summary and then select **Submit**, and wait for the guardrail to be saved.
 
@@ -109,10 +109,4 @@ When the default guardrail doesn't meet your needs, you can create custom guardr
 
 In this exercise, you've explored content filters and the ways in which they can help safeguard against potentially harmful or offensive content. Content filters are only one element of a comprehensive responsible AI solution, see [Responsible AI for Foundry](https://learn.microsoft.com/azure/ai-foundry/responsible-use-of-ai-overview) for more information.
 
-## Clean up
 
-If you've finished exploring Microsoft Foundry, you should delete the resources you have created in this exercise to avoid incurring unnecessary Azure costs.
-
-1. Open the [Azure portal](https://portal.azure.com) and view the contents of the resource group where you deployed the resources used in this exercise.
-1. On the toolbar, select **Delete resource group**.
-1. Enter the resource group name and confirm that you want to delete it.
