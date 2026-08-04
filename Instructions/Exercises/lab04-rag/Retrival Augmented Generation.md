@@ -248,20 +248,29 @@ The initial application files you'll need to develop your chat application are p
     > **Note**: If you have subscriptions in multiple tenants, add `--tenant <tenant-id>`. See [Sign into Azure interactively using the Azure CLI](https://learn.microsoft.com/cli/azure/authenticate-azure-cli-interactively) for details.
 
 1. When prompted, follow the instructions to sign into Azure. Then complete the sign in process in the command line, viewing (and confirming if necessary) the details of the subscription containing your Foundry resource.
+
 1. After you have signed in, enter the following command to run the application:
 
     ```powershell
-   python tools-app.py
+    python tools-app.py
     ```
 
     The program should run in the terminal (if not, resolve any errors and try again).
 
-1. When prompted, enter `What's happening in San Francisco next month?` and review the response from your generative AI model.
+    ![Screenshot showing the tools-app application starting in the terminal and creating the vector store.](../../Media/application-start-1.jpeg)
+
+1. When prompted with `Enter a question (or type "quit" to exit):`, ask `What's happening in San Francisco next month?` and review the response from your generative AI model.
+
+    > **Tip**: The model may first respond with hotel/travel info from *file_search* instead of actual events, since the question is a bit ambiguous. If that happens, follow up with a more specific question such as `What actual events are happening in San Francisco next month?` to get a response from the *web_search* tool.
 
     The response should include information retrieved using the *web_search* tool.
+
+    ![Screenshot showing the application response to the San Francisco query using the web_search tool.](../../Media/web-search-response-1.jpeg)
 
 1. Try this follow-up question: `What hotels does Margie's Travel offer there?`
 
     The response should include information retrieved using the *file_search* tool.
 
-1. When you're finished, enter `quit` to exit the program.
+    ![Screenshot showing the application response to the hotel query using the file_search tool.](../../Media/file-search-response-1.jpeg)
+
+1. When you're done, type `quit` to exit the application.
