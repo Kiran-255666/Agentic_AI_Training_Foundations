@@ -154,13 +154,28 @@ When the default guardrail doesn't meet your needs, you can create custom guardr
 
 1. Select **Next** when you've modified the content filter settings for all four risk categories.
 
-1. On the **Select agents and models** section, select **Models**, and then apply the new guardrail to the **gpt-5.4-mini** model.
+1. On the **Select agents and models** section, select **Models**, and then apply the new guardrail to the **gpt-5.4-mini** model, then click **Next**.
 
    ![Screenshot of Create guardrail controls page](../../Media/agents-and-models.png)
 
-1. In the pane on the left, select **Deployments**. Then select the **gpt-5.4-mini** model to open it in the playground.
-1. Select the model's **Details** page, and confirm that the new guardrail has been applied to the model.
+1. On the **Review** section, read the summary and then select **Create**, and wait for the guardrail to be saved.
+
+   ![Screenshot of Create guardrail controls page](../../Media/review-page.png)
+
+1. In the pane on the left, select **Deployments**. If the guardrail is still being saved, wait for the **Saving guardrail** process to complete. Then, select the **gpt-5.4-mini** model to open it in the playground.
+
+1. Select the model's **Details** page and confirm that the new guardrail has been applied to the model. If you'd like, click **Try in playground** to retry the prompts and observe the updated guardrail behavior.
+
+   ![Screenshot of Create guardrail controls page](../../Media/details-3.png)
 
 > **Note**: The default guardrail is generally pretty effective against the kinds of offensive content we can include in a lab such as this; so the more restrictive guardrail we created may not change the response from the prompts tried earlier in this lab. However, it will be more effective against prompts that reference extreme violence, sexual content, hate speech, or self-harm.
 
-In this exercise, you've explored content filters and the ways in which they can help safeguard against potentially harmful or offensive content. Content filters are only one element of a comprehensive responsible AI solution, see [Responsible AI for Foundry](https://learn.microsoft.com/azure/ai-foundry/responsible-use-of-ai-overview) for more information!
+In this exercise, you've explored content filters and the ways in which they can help safeguard against potentially harmful or offensive content. Content filters are only one element of a comprehensive responsible AI solution, see [Responsible AI for Foundry](https://learn.microsoft.com/azure/ai-foundry/responsible-use-of-ai-overview) for more information.
+
+## Clean up
+
+If you've finished exploring Microsoft Foundry, you should delete the resources you have created in this exercise to avoid incurring unnecessary Azure costs.
+
+1. Open the [Azure portal](https://portal.azure.com) and view the contents of the resource group where you deployed the resources used in this exercise.
+1. On the toolbar, select **Delete resource group**.
+1. Enter the resource group name and confirm that you want to delete it.
